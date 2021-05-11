@@ -1,0 +1,153 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.8em;
+  margin: 0;
+}
+body {
+  background-color: #eee;
+}
+h1,
+h2,
+h3 {
+  color: rgb(3, 46, 25);
+}
+
+header {
+  display: block;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(13, 245, 168);
+  font-size: large;
+}
+nav > ul {
+  display: inline;
+}
+nav > ul > li {
+  display: inline-block;
+  list-style: none;
+  margin: 0 5px 0 5px;
+}
+ul > li > a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #0000ff;
+}
+a:link {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* main setion of page */
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  margin-top: 80px;
+  margin-bottom: 150px;
+  margin-left: 10px;
+}
+.article-lay {
+  margin-left: 15px;
+}
+
+.img {
+  border: 1px solid rgb(8, 8, 119);
+  border-radius: 3px;
+}
+#bookbtn {
+  height: 10px;
+  width: 10px;
+  border: 1px solid rgb(16, 201, 109);
+  border-radius: 4px;
+  color: #fff;
+  background: rgb(13, 238, 125);
+  padding: 10px;
+  text-decoration: none;
+}
+#bookbtn:hover {
+  background: rgb(18, 185, 18);
+}
+
+/* eventspage */
+.img-group {
+  margin-left: 19px;
+  margin-top: 90px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.img {
+  border: 1px solid #999;
+  border-radius: 4px;
+  margin: 2px;
+  padding: 10px;
+}
+.img button {
+  border: 1px solid rgb(16, 201, 109);
+  border-radius: 4px;
+  padding: 15px;
+  background: rgb(13, 238, 125);
+  color: rgb(27, 20, 20);
+  cursor: grab;
+}
+.img button:hover {
+  color: #fff;
+  background: rgb(18, 185, 18);
+}
+.details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-weight: bold;
+}
+
+/* booking page */
+label {
+  font-weight: 600;
+}
+.input-container input {
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  width: 50%;
+}
+.input-container input[type="number"] {
+  width: 20%;
+}
+input[type="reset"] {
+  border: none;
+  background: transparent;
+  text-decoration: underline;
+  font-size: 300;
+}
+input[type="submit"] {
+  background-color: rgb(13, 238, 125);
+  border: 1px solid rgb(13, 238, 125);
+  border-radius: 5px;
+  padding: 12px;
+}
+.lastBtns {
+  margin-top: 40px;
+}
+@media only screen and (min-width: 768px) {
+  .input-container input {
+    width: 500px;
+  }
+}
+
+/* bottom information */
+#about {
+  margin-left: 15px;
+}
+footer > nav > ul {
+  postion:fixed;
+  bottom: 0; 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: rgb(13, 245, 168);
+  margin: 0 0 0 0;
+}

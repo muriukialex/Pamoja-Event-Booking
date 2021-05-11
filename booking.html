@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        main{
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+        .img{
+            border: none;
+        }
+        .detailBox{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .venue,.price{
+            font-weight: 600;
+        }
+    </style>
+    <title>Booking | Pamoja</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div><h3>Book</h3></div>
+        <div>
+            <div class="img">
+                <img src="/">
+                <div class="detailBox">
+                    <div class="venue"></div>
+                    <div class="price"></div>
+                </div>
+            </div>
+        <form action="#">
+
+            <div class="input-container">
+                <div><label for="first-name">First name</label></div>
+                <div><input type="text" name="first-name" id="first-name"></div>
+            </div>
+            <div class="input-container">
+                <div><label for="last-name">Last name</label></div>
+                <div><input type="text" name="last-name" id="last-name"></div>
+            </div>
+            <div class="input-container">
+                <div><label for="county">County</label></div>
+                <div><input type="text" name="county" id="county"></div>
+            </div>
+            <div class="input-container">
+                <div><label for="age">Age</label></div>
+                <div><input type="number" name="age" id="age" min="18" max="100"></div>
+            </div>
+
+            <div class="lastBtns">
+                <input type="reset" value="reset"/>
+                <input type="submit" value="book"/>
+            </div>
+
+        </form>
+    </div>
+    </main>
+</body>
+<script>
+    window.addEventListener("DOMContentLoaded",()=>{
+        let booking = localStorage.getItem("booking");
+        if(booking){
+            let bookingOrder = JSON.parse(booking);
+            let bookingClass = document.querySelector(".img");
+
+            let venue = bookingClass.querySelector(".venue");
+            let price = bookingClass.querySelector(".price");
+
+            venue.innerHTML = bookingOrder.venue;
+            price.innerHTML = bookingOrder.price;
+
+            let img = bookingClass.querySelector("img");
+            img.setAttribute("height","200px");
+            img.setAttribute("width","200px");
+            img.setAttribute("src",`images/${bookingOrder.id}.png`);
+        }
+
+    });
+</script>
+</html>

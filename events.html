@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Events | Pamoja</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="img-group">
+        <div class="img">
+            <img src="images/androidparty.png" alt="event-1" height="300px" width="300px" title="event-1">
+            <blockquote>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi nobis dolore doloremque deleniti 
+                ad amet magnam deserunt praesentium? 
+                Qui alias ratione libero voluptatem quam saepe, nisi labore nam! Facere, pariatur.
+            </blockquote>
+                <div class="details">
+                    <div class="venue">Venue: Kasarani Stadium</div>
+                    <div class="price">Price: Ksh. 900</div>
+                </div>
+                <button data-order="androidparty">Book</button>
+
+        </div>
+        <div class="img">
+            <img src="images/androidparty.png" alt="event-1" height="300px" width="300px" title="event-1">
+            <blockquote>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi nobis dolore doloremque deleniti 
+                ad amet magnam deserunt praesentium? 
+                Qui alias ratione libero voluptatem quam saepe, nisi labore nam! Facere, pariatur.
+            </blockquote>
+                <div class="details">
+                    <div class="venue">Venue: Kasarani Stadium</div>
+                    <div class="price">Price: Ksh. 900</div>
+                </div>
+                <button data-order="androidparty">Book</button>
+
+        </div>
+        <div class="img">
+            <img src="images/androidparty.png" alt="event-1" height="300px" width="300px" title="event-1">
+            <blockquote>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi nobis dolore doloremque deleniti 
+                ad amet magnam deserunt praesentium? 
+                Qui alias ratione libero voluptatem quam saepe, nisi labore nam! Facere, pariatur.
+            </blockquote>
+                <div class="details">
+                    <div class="venue">Venue: Kasarani Stadium</div>
+                    <div class="price">Price: Ksh. 900</div>
+                </div>
+                <button data-order="androidparty">Book</button>
+
+        </div>
+        <div class="img">
+            <img src="images/androidparty.png" alt="event-1" height="300px" width="300px" title="event-1">
+            <blockquote>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi nobis dolore doloremque deleniti 
+                ad amet magnam deserunt praesentium? 
+                Qui alias ratione libero voluptatem quam saepe, nisi labore nam! Facere, pariatur.
+            </blockquote>
+                <div class="details">
+                    <div class="venue">Venue: Kasarani Stadium</div>
+                    <div class="price">Price: Ksh. 900</div>
+                </div>
+                <button data-order="androidparty">Book</button>
+
+        </div>
+        
+    </div>
+</body>
+
+<script>
+    window.addEventListener("DOMContentLoaded",()=>{
+        const bookButtons = document.querySelectorAll("button[data-order]");
+        bookButtons.forEach(button=>{
+            button.addEventListener("click",(e)=>{
+                const button = e.currentTarget;
+                const parentElement = button.parentNode;
+
+                let booking = {
+                    id: button.getAttribute("data-order"),
+                    venue: parentElement.querySelector(".venue").innerHTML,
+                    price: parentElement.querySelector(".price").innerHTML
+                };
+                localStorage.setItem("booking",JSON.stringify(booking));
+
+                const url = window.location.href.replace("events.html","booking.html");
+                window.location.href = url;
+
+            });
+
+
+        });
+
+    });
+</script>
+
+</html>
